@@ -18,7 +18,7 @@ namespace Sample
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug() 
                 .WriteTo.Console()
-                .WriteTo.Seq("http://seq:5341/")
+                .WriteTo.Seq("http://0.0.0.0:5341/")
                 .WriteTo.EventCollector("http://splunk:8088/","00112233-4455-6677-8899-AABBCCDDEEFF")
                 .WriteTo.MSSqlServer(connectionString, "Logs", autoCreateSqlTable: true)
                 .Enrich.WithProperty("App Name", "Serilog Console Docker Sample")
